@@ -49,12 +49,12 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item me-2">
-                        <a class="btn btn-outline-secondary" href="">
+                        <a class="btn btn-outline-secondary" href="{% url 'snippets-add' %}">
                             Добавить сниппет
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-outline-info" href="">
+                        <a class="btn btn-outline-info" href="{% url 'snippets-list' %}">
                             Посмотреть сниппеты
                         </a>
                     </li>
@@ -116,7 +116,7 @@
 </main>
 
 <footer class="footer mt-auto py-3">
-    <span class="text-muted">&copy; Юрченко Евгений, {% now "Y" %}. <br>
+    <span class="text-muted">&copy; Требунский Алексей, {% now "Y" %}. <br>
         Шаблон заготовка для урока</span>
 </footer>
 
