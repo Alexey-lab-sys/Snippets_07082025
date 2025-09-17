@@ -1,4 +1,3 @@
-
 from django.http import Http404
 from django.shortcuts import render, redirect
 from MainApp.models import Snippet
@@ -21,3 +20,16 @@ def snippets_page(request):
         'snippets': snippets
         }
     return render(request, 'pages/view_snippets.html', context)
+
+
+def snippet_detail(request, snippet_id: int):
+    try:
+        snippet = Snippet.objects.get(id=snippet_id)
+    except Snippet.DoesNotExist:
+        raise Http404(f"Сниппет с id={snippet_id} не найден")
+    else:
+        context = {
+            'pagename': 'Сниппет',
+            'snippet': snippet,
+        }
+        return render(request, 'pages/snippet_detail.html', context)
